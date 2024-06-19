@@ -76,7 +76,6 @@ def generate_pols(alpha, beta, x, ymin, ymax, total_sum):
             pols.pop(i+1)
         else:
             i += 1
-
     return pols
 
 
