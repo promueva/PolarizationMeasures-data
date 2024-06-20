@@ -85,11 +85,11 @@ ymax = 100
 total_sum = 100
 folder = "pop100"
 
-for alpha, beta in [(1.2,1), (2,1)]:
+for alpha, beta in [(1,2)]:
    print(f"[{datetime.now().time()}] started alpha:{alpha},beta:{beta},x:{x},ymin:{ymin},ymax:{ymax},pop:{total_sum}")
    pols = generate_pols(alpha, beta, x, ymin, ymax, total_sum)
    file_path= f"{folder}/alpha{alpha}_beta{beta}"
    with open(file_path, 'w') as file:
         file.write(f"alpha:{alpha},beta:{beta},x:{x},ymin:{ymin},ymax:{ymax},pop:{total_sum}\n")
-        file.write('\n'.join([str(p) for p in pols]))
+        file.write('\n'.join([f"{p:.10f}" for p in pols]))
    print(f"[{datetime.now().time()}] done")
